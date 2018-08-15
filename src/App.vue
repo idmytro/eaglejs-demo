@@ -9,14 +9,16 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
+@import '../node_modules/eagle.js/dist/eagle.css';
+
 body {
-  width: 100%;
-  margin: 0 0;
+  /* width: 100%; */
+  margin: 0;
 }
-html {
+/* html {
   height: 0;
-}
+} */
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -50,19 +50,20 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style scoped>
 @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 
 .frontpage {
   width: 100%;
   height: auto;
   position: absolute;
-  background-image: assetUrl("~eagle.js/dist/themes/assets/crossword.png");
-  .content{
-    width: 600px;
-    max-width: 90%;
-    margin: 0 auto;
-  }
+  background-image: url("~eagle.js/dist/themes/assets/crossword.png");
+}
+
+.frontpage .content{
+  width: 600px;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4, p {
@@ -100,18 +101,18 @@ h3 {
 .box-card {
   text-align: center;
   margin-bottom: 50px;
-  .embedded-slideshow-container {
-    position: relative;
-    width: 150px;
-    height: 120px;
-    margin: 0 auto;
-    border: 1px solid grey;
-    overflow: hidden;
-  }
-  h3, p {
-    margin-bottom: 0;
-    margin-top: 0;
-  }
+}
+.box-card .embedded-slideshow-container {
+  position: relative;
+  width: 150px;
+  height: 120px;
+  margin: 0 auto;
+  border: 1px solid grey;
+  overflow: hidden;
+}
+.box-card h3, .box-card p {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 a {
