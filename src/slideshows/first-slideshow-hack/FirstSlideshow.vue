@@ -15,6 +15,8 @@
       h3 Want cool effects?
       p.
         Code your own, or try stealing for the other slideshows !
+    div.
+      {{currentSlideIndex}} / {{slides.length}}
 </template>
 
 <script>
