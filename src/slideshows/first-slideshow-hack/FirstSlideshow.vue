@@ -28,6 +28,24 @@ export default {
     title: 'Your First Slideshow',
     description: 'A boilerplate to get you started',
     path: 'your-first-slideshow'
+  },
+  created () {
+  },
+  watch: {
+    currentSlideIndex: {
+      immediate: true,
+      handler (to) {
+        console.log(to)
+        this.$router.replace({query: {
+          s: to
+        }})
+      }
+    },
+    $route (to) {
+      let newIndex = +to.query.s || 1
+      if (newIndex > this.slides.length) newIndex = this.slides.length
+      this.currentSlideIndex = newIndex
+    }
   }
 }
 </script>
