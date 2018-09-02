@@ -5,7 +5,7 @@ export default {
     // require('./introducing-eagle/IntroducingEagle'),
     // require('./eagle-recipes/EagleRecipes'),
     // require('./themes-slideshow/ThemesSlideshow'),
-    // require('./first-slideshow/FirstSlideshow'),
-    require('./first-slideshow-hack/FirstSlideshow')
+    require('./first-slideshow/FirstSlideshow')
+    // require('./first-slideshow-hack/FirstSlideshow')
   ]
 }

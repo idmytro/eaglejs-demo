@@ -31,6 +31,6 @@ var router = new Router({
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: { App }
+  components: { App },
+  template: '<App/>'
 })

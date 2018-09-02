@@ -15,6 +15,8 @@
       h3 Want cool effects?
       p.
         Code your own, or try stealing for the other slideshows !
+    div.
+      {{currentSlideIndex}} / {{slides.length}}
 </template>
 
 <script>
@@ -26,28 +28,37 @@ export default {
     title: 'Your First Slideshow',
     description: 'A boilerplate to get you started',
     path: 'your-first-slideshow'
+  },
+  watch: {
+    currentSlideIndex: {
+      immediate: true,
+      handler (to) {
+        console.log(to)
+        this.$router.replace({query: {
+          s: to
+        }})
+      }
+    },
+    $route (to) {
+      let newIndex = +to.query.s || 1
+      if (newIndex > this.slides.length) newIndex = this.slides.length
+      this.currentSlideIndex = newIndex
+    }
+  },
+  created () {
   }
 }
 </script>
 
-<style lang='scss'>
+<style>
 @import url(https://fonts.googleapis.com/css?family=Raleway);
-#MyFirstSlideshow{
-  .eg-slideshow{
-    font-family: 'Raleway';
-    background-color: #eef;
-    .eg-slide{
-      .eg-slide-content{
-        width: 25em;
-        max-width: 80%;
-        margin: 0 auto;
-      }
-    }
-  }
-  .eg-slide-content{
-    width: 25em;
-    max-width: 80%;
-    margin: 0 auto;
-  }
+#MyFirstSlideshow .eg-slideshow {
+  font-family: "Raleway";
+  background-color: #eef;
+}
+#MyFirstSlideshow .eg-slide-content {
+  width: 25em;
+  max-width: 80%;
+  margin: 0 auto;
 }
 </style>
