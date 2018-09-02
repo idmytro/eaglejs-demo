@@ -2,44 +2,35 @@
 <template lang="pug">
 #EagleRecipes.eg-theme-gourmet
   .eg-slideshow
-    v-slide
-      h1 Eagle Recipes
-      img.logo(src='./eagle-jam.png')
-      p.center 100% Pure Code, no Artificial Swag
+    //- v-slide
+    //-   h1 Eagle Recipes
+    //-   img.logo(src='./eagle-jam.png')
+    //-   p.center 100% Pure Code, no Artificial Swag
 
 
-    v-slide
-      h3 Getting started
+    //- v-slide
+    //-   h3 Getting started
 
-      p.
-        You should first learn about <a href='https://vuejs.org/' target='_blank'>Vue.js</a>
-        and <a href='https://vuejs.org/' target='_blank'>Pug</a>, which we will
-        use to make slideshows.
+    //-   p.
+    //-     You should first learn about <a href='https://vuejs.org/' target='_blank'>Vue.js</a>
+    //-     and <a href='https://vuejs.org/' target='_blank'>Pug</a>, which we will
+    //-     use to make slideshows.
 
-      p.
-        Once you have installed Node/NPM, download the demo and start from there:
-      eg-code-block(lang='bash').
-        git clone https://github.com/Zulko/eaglejs-demo.git
-        cd eaglejs-demo
-        npm install
-        npm run dev
+    //-   p.
+    //-     Once you have installed Node/NPM, download the demo and start from there:
+    //-   eg-code-block(lang='bash').
+    //-     git clone https://github.com/Zulko/eaglejs-demo.git
+    //-     cd eaglejs-demo
+    //-     npm install
+    //-     npm run dev
 
     v-slide(:steps=3)
       h3 Writing a slideshow
       p A slideshow is contained in a Vue file.
       .subslide(v-if='step === 1')
         p The &lt;template&gt; tag provides the slideshow's structure:
-        eg-code-block(lang='html').
-          &lt;template lang='pug'&gt;
-          #MyFirstSlideshow
-            .eg-slideshow
-              slide
-                h1 Hi there !
-                p I am the first slide !
-              slide
-                h1 Hi there !
-                p I am the second slide !
-          &lt;/template&gt;
+        prism-block(class='pr').
+          {{code['1']}}
       .subslide(v-if='step === 2')
         p.
           The &lt;script&gt; tag loads Eagle and specifies options:
@@ -171,36 +162,12 @@
         .demo-slideshow
           p Result:
           demo-slideshow(:embedded='true', :firstSlide=9, :lastSlide=9)
-
-    v-slide(:steps=3)
-      h3 Subslides
-      eg-code-block(lang='html').
-        slide(:steps=3)
-          h2 Some verses
-          eg-transition(enter='fadeInRight' leave='fadeOutLeft')
-            .subslide(v-if='step === 1')
-              p Once it smiled a silent dell
-              p Where the people did not dwell;
-          eg-transition(enter='fadeInRight' leave='fadeOutLeft')
-            .subslide(v-if='step === 2')
-              p They had gone unto the wars,
-              p Trusting to the mild-eyed stars,
-          etc.
-
-      .demo-slideshow
-        p Result:
-        demo-slideshow(:embedded='true', :firstSlide=10, :lastSlide=10)
-
-    v-slide
-      p.
-        Hmmm... Looks like this slideshow is under construction.
-        That would explain the general ugliness...
-        Come back later for more !
 </template>
 
 <script>
 import eagle from 'eagle.js'
 import DemoSlideshow from './DemoSlideshow'
+import PrismBlock from '../../components/PrismBlock'
 
 var TransitionedSlide = {
   mixins: [eagle.slide],
@@ -217,7 +184,12 @@ export default {
       fullPageWidth: null,
       fullPageHeight: null,
       parentHeight: null,
-      parentWidth: null
+      parentWidth: null,
+      code: {
+        '1': `
+<body>BODY</body>
+`
+      }
     }
   },
   infos: {
@@ -226,6 +198,7 @@ export default {
     path: 'eagle-recipes'
   },
   components: {
+    PrismBlock,
     'demo-slideshow': DemoSlideshow,
     'v-slide': TransitionedSlide
   }
@@ -233,6 +206,7 @@ export default {
 </script>
 
 <style lang='scss'>
+@import 'node_modules/prismjs/themes/prism';
 @import 'node_modules/eagle.js/src/themes/gourmet/gourmet';
 #EagleRecipes {
   a {
