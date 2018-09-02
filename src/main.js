@@ -11,6 +11,9 @@ import Eagle from 'eagle.js'
 import slideshows from './slideshows/slideshows.js'
 /* eslint-disable no-new */
 
+import VuePrism from 'vue-prism'
+Vue.use(VuePrism)
+
 Vue.use(Eagle)
 Vue.use(Router)
 Vue.config.productionTip = false

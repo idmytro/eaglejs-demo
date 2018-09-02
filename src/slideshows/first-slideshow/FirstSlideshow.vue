@@ -1,27 +1,45 @@
-<template lang='pug'>
-#MyFirstSlideshow
-  .eg-slideshow
-    slide
-      h1 Hi there !
-      h4 This is your first slideshow !
-
-    slide(enter='bounceInRight' leave='fadeOut')
-      h3 Hey modify me !
-      p.
-        Come on modify me ! If you are running the development server,
-        you will see the changes take effect immediately
-
-    slide(enter='fadeIn')
-      h3 Want cool effects?
-      p.
-        Code your own, or try stealing for the other slideshows !
-    div.
-      {{currentSlideIndex}} / {{slides.length}}
+<template>
+  <div id="MyFirstSlideshow">
+    <div class="eg-slideshow">
+      <slide>
+        <h1>Hi there !</h1>
+        <h4>This is your first slideshow !</h4>
+        <PrismCode
+          class="language-js"
+          style="padding-top: 0; padding-bottom: 0"
+        >
+          <code
+            v-html="`
+  export default {
+    name: 'hello'
+  }
+        `"
+          />
+        </PrismCode>
+      </slide>
+      <slide
+        enter="bounceInRight"
+        leave="fadeOut"
+      >
+        <h3>Hey modify me !</h3>
+        <p>Come on modify me ! If you are running the development server, you will see the changes take effect immediately
+        </p>
+      </slide>
+      <slide enter="fadeIn">
+        <h3>Want cool effects?</h3>
+        <p>Code your own, or try stealing for the other slideshows !</p>
+      </slide>
+      <div>{{ currentSlideIndex }} / {{ slides.length }}</div>
+    </div>
+  </div>
 </template>
 
 <script>
 import eagle from 'eagle.js'
+import PrismCode from '../../components/PrismCode'
+
 export default {
+  components: {PrismCode},
   mixins: [ eagle.slideshow ],
   infos: {
     // These infos appear on the home page, below the slideshow's thumbnail
@@ -50,8 +68,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+
+@import 'node_modules/prismjs/themes/prism';
+
 #MyFirstSlideshow .eg-slideshow {
   font-family: "Raleway";
   background-color: #eef;
