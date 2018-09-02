@@ -80,12 +80,12 @@ export default {
 }
 </script>
 
-<style lang='stylus'>
+<style lang='scss'>
 @import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
 
 #AwesomeEmbeddedSlideshow {
-  // @import 'node_modules/eagle.js/src/themes/base';
-  @import '../../../node_modules/eagle.js/src/themes/_base.scss';
+  @import 'node_modules/eagle.js/src/themes/base';
+  // @import '../../../node_modules/eagle.js/src/themes/_base.scss';
 
   .eg-slideshow {
     .eg-slide {

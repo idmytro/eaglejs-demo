@@ -292,8 +292,9 @@ export default {
 }
 </script>
 
-<style lang='stylus'>
-@import '../../../node_modules/eagle.js/dist/themes/agrume/agrume.css';
+<style lang='scss'>
+@import 'node_modules/eagle.js/dist/themes/agrume/agrume';
+// @import '../../../node_modules/eagle.js/dist/themes/agrume/agrume.css';
 #IntroducingEagle {
   .frontpage {
     img {

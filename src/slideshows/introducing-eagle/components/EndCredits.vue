@@ -108,7 +108,7 @@ export default {
   }
 }
 </script>
-<style lang='stylus' scoped>
+<style lang='scss' scoped>
 @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 @keyframes scroll {
     from {margin-top: 0%}

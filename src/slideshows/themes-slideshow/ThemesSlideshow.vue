@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang='stylus'>
+<style lang='scss'>
 #ThemesSlideshow {
   // STYLES THAT ARE GLOBAL FOR THIS PARTICULAR SLIDESHOW
   h3 {

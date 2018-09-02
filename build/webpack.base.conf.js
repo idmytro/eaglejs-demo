@@ -44,18 +44,18 @@ module.exports = {
               sourceMap: true
             }
           },
-          {
-            loader: 'stylus-loader',
-            options: {
-              sourceMap: true
-            }
-          }
           // {
-          //   loader: 'sass-loader',
+          //   loader: 'stylus-loader',
           //   options: {
           //     sourceMap: true
           //   }
           // }
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
         ]
       },
       {
