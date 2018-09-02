@@ -43,10 +43,13 @@ import eagle from 'eagle.js'
 import ExampleImageSlideshow from './ExampleImageSlideshow'
 
 export default {
+  components: {
+    'example-image-slideshow': ExampleImageSlideshow
+  },
   mixins: [eagle.slideshow],
   props: {
-    preference: {default: 'baby bunnies'},
-    username: {default: 'Tracy'}
+    preference: {default: 'baby bunnies', type: String},
+    username: {default: 'Tracy', type: String}
   },
   data: function () {
     return {
@@ -73,18 +76,17 @@ export default {
     title: 'Deadpool',
     description: 'Demo embedded slideshow',
     path: 'deadpool'
-  },
-  components: {
-    'example-image-slideshow': ExampleImageSlideshow
   }
 }
 </script>
 
-<style lang='scss'>
+<style lang='stylus'>
 @import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
 
 #AwesomeEmbeddedSlideshow {
-  @import 'node_modules/eagle.js/src/themes/base';
+  // @import 'node_modules/eagle.js/src/themes/base';
+  @import '../../../node_modules/eagle.js/src/themes/_base.scss';
+
   .eg-slideshow {
     .eg-slide {
       .eg-slide-content, .subslide{
@@ -172,7 +174,6 @@ deadpool: Oh im sorry, didn't mean to impress you
 dp: Let me make it right with some of your favorite animals.
 
 Oh yeah, oh oh, yeah
-
 
 dp It's just a slideshow embedded in a slideshow embedded in an inserted slideshow
  But I really wouldn't want to blow your mind.

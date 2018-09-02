@@ -5,7 +5,6 @@ eg-transition(:enter='enter', :leave='leave')
       h3(v-if='step < 12') Slide reuse
       h3(v-else) Slideception !!
 
-
       eg-transition(leave='bounceOutLeft')
 
         .subslide(v-if='step <= 2')
@@ -53,18 +52,19 @@ eg-transition(:enter='enter', :leave='leave')
 import AwesomeEmbeddedSlideshow from './AwesomeEmbeddedSlideshow'
 import eagle from 'eagle.js'
 export default {
-  props: {
-    steps: {default: 14},
-    username: {default: 'Tracy'},
-    preference: {default: 'baby bunnies'}
-  },
   components: {
     'awesome-embedded-slideshow': AwesomeEmbeddedSlideshow
   },
-  mixins: [eagle.slide]
+  mixins: [eagle.slide],
+  props: {
+    steps: {default: 14, type: Number},
+    username: {default: 'Tracy', type: String},
+    preference: {default: 'baby bunnies', type: String}
+  }
 }
 </script>
-<style lang='scss' scoped>
+
+<style lang='stylus' scoped>
 .eg-slide {
   .eg-slide-content {
     .chuckle {
@@ -79,7 +79,6 @@ export default {
       width: 16em;
       height: 9em;
     }
-
   }
 }
 </style>

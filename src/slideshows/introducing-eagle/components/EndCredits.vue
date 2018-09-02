@@ -16,7 +16,7 @@ PUBLIC DOMAIN
 <script>
 export default {
   props: {
-    username: {default: 'Tracy'}
+    username: {default: 'Tracy', type: String}
   },
   data: function () {
     return {
@@ -108,7 +108,7 @@ export default {
   }
 }
 </script>
-<style lang='scss' scoped>
+<style lang='stylus' scoped>
 @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 @keyframes scroll {
     from {margin-top: 0%}

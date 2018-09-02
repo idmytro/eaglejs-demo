@@ -10,7 +10,7 @@ import eagle from 'eagle.js'
 export default {
   mixins: [eagle.slideshow],
   props: {
-    preference: {default: 'funny kitties'}
+    preference: {default: 'funny kitties', type: String}
   },
   data: function () {
     var images = {

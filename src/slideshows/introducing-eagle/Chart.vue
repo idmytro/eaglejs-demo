@@ -6,27 +6,17 @@ canvas(:id='id', :width='width', :height='height')
 import Chart from 'chart.js'
 export default {
   props: {
-    id: {default: () => Math.random().toString(36).substr(2, 10)},
-    width: {default: 400},
-    height: {default: 400},
-    data: {default: () => ({})},
-    options: {default: () => ({})},
-    type: {default: 'bar'}
+    id: {default: () => Math.random().toString(36).substr(2, 10), type: String},
+    width: {default: 400, type: Number},
+    height: {default: 400, type: Number},
+    data: {default: () => ({}), type: Object},
+    options: {default: () => ({}), type: Object},
+    type: {default: 'bar', type: String}
   },
   data: function () {
     return {
       chart: null
     }
-  },
-  mounted: function () {
-    var canvas = document.getElementById(this.id)
-    var ctx = canvas.getContext('2d')
-    // Reduce the animation steps for demo clarity.
-    this.chart = new Chart(ctx, {
-      type: this.type,
-      data: this.data,
-      options: this.options
-    })
   },
   watch: {
     data: {
@@ -40,6 +30,16 @@ export default {
         this.chart.update()
       }
     }
+  },
+  mounted: function () {
+    var canvas = document.getElementById(this.id)
+    var ctx = canvas.getContext('2d')
+    // Reduce the animation steps for demo clarity.
+    this.chart = new Chart(ctx, {
+      type: this.type,
+      data: this.data,
+      options: this.options
+    })
   }
 }
 </script>

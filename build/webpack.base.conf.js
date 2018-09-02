@@ -43,6 +43,12 @@ module.exports = {
             options: {
               sourceMap: true
             }
+          },
+          {
+            loader: 'stylus-loader',
+            options: {
+              sourceMap: true
+            }
           }
           // {
           //   loader: 'sass-loader',

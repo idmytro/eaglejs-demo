@@ -2,10 +2,9 @@
 // website, don't forget to register your new slideshows in the list:
 export default {
   list: [
-    // require('./introducing-eagle/IntroducingEagle'),
+    require('./introducing-eagle/IntroducingEagle'),
     // require('./eagle-recipes/EagleRecipes'),
     // require('./themes-slideshow/ThemesSlideshow'),
     require('./first-slideshow/FirstSlideshow')
-    // require('./first-slideshow-hack/FirstSlideshow')
   ]
 }

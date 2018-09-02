@@ -64,7 +64,6 @@
             img(:src="preloadedImages['youRightNow']",
                 :style="{height: '10em'}")
 
-
     slide(:steps=4, leave='fadeOut')
       eg-transition(enter='flipInX')
         h3 Show me the codey !!!
@@ -211,7 +210,6 @@
         I'm not a frontend person, so everyone<br />
         is welcome to contribute to <a href="https://github.com/Zulko/eagle.js" target='_blank'> the repo</a>.
 
-
     slide(enter='fadeIn')
       h3 Thank you !
       p This slideshow's so fresh, it has end credits.
@@ -222,19 +220,19 @@
 import eagle from 'eagle.js'
 
 export default {
-  mixins: [eagle.slideshow],
-  infos: {
-    title: 'Introducing Eagle.js',
-    description: 'Watch this first if you are new to Eagle.js',
-    path: 'introducing-eagle'
-  },
   components: {
     'awesome-inserted-slide': require('./AwesomeInsertedSlide'),
     'figures-slide': require('./FiguresSlide'),
     'end-credits': require('./components/EndCredits'),
     'themes-slideshow': require('../themes-slideshow/ThemesSlideshow')
   },
-  data: function () {
+  mixins: [eagle.slideshow],
+  infos: {
+    title: 'Introducing Eagle.js',
+    description: 'Watch this first if you are new to Eagle.js',
+    path: 'introducing-eagle'
+  },
+  data () {
     return {
       username: 'Tracy',
       preference: 'baby bunnies',
@@ -294,8 +292,8 @@ export default {
 }
 </script>
 
-<style lang='scss'>
-@import 'node_modules/eagle.js/dist/themes/agrume/agrume';
+<style lang='stylus'>
+@import '../../../node_modules/eagle.js/dist/themes/agrume/agrume.css';
 #IntroducingEagle {
   .frontpage {
     img {

@@ -53,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='stylus'>
 #ThemesSlideshow {
   // STYLES THAT ARE GLOBAL FOR THIS PARTICULAR SLIDESHOW
   h3 {
@@ -156,7 +156,7 @@ export default {
   }
   .local-eg-theme-city {
     @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
-    @import './assets/monokai';
+    @import './assets/monokai.css';
     .eg-code-block {
       margin-top: 30%;
     }

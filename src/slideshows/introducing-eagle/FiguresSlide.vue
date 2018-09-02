@@ -26,8 +26,9 @@ import eagle from 'eagle.js'
 import chart from './Chart'
 export default {
   components: { chart },
+  mixins: [eagle.slide],
   props: {
-    steps: {default: 5}
+    steps: {default: 5, type: Number}
   },
   data: function () {
     return {
@@ -103,11 +104,10 @@ export default {
         }]
       }
     }
-  },
-  mixins: [eagle.slide]
+  }
 }
 </script>
-<style lang='scss' scoped>
+<style lang='stylus' scoped>
 .eg-slide {
   .eg-slide-content {
     // FIGURE AND CAPTIONS
