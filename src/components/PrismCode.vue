@@ -1,7 +1,5 @@
 <template>
-  <pre>
-    <slot/>
-  </pre>
+  <pre><slot/></pre>
 </template>
 <script>
 import Prism from 'prismjs'

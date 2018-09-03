@@ -2,18 +2,17 @@
   <div id="MyFirstSlideshow">
     <div class="eg-slideshow">
       <slide>
-        <h1>Hi there !</h1>
+        <h1>Всем привет</h1>
         <h4>This is your first slideshow !</h4>
         <PrismCode
           class="language-js"
           style="padding-top: 0; padding-bottom: 0"
         >
           <code
-            v-html="`
-  export default {
+            v-html="
+              `export default {
     name: 'hello'
-  }
-        `"
+  }`"
           />
         </PrismCode>
       </slide>
@@ -29,7 +28,7 @@
         <h3>Want cool effects?</h3>
         <p>Code your own, or try stealing for the other slideshows !</p>
       </slide>
-      <div>{{ currentSlideIndex }} / {{ slides.length }}</div>
+      <div style="position: absolute; text-align: right; bottom: 1em; right: 1em">{{ currentSlideIndex }} / {{ slides.length }}</div>
     </div>
   </div>
 </template>
@@ -71,7 +70,7 @@ export default {
 <style lang='scss'>
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
-@import 'node_modules/prismjs/themes/prism';
+@import 'node_modules/prismjs/themes/prism-funky';
 
 #MyFirstSlideshow .eg-slideshow {
   font-family: "Raleway";
